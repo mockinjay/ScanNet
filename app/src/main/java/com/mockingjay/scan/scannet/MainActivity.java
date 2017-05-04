@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        prepareAlbums();
+        getFiles();
 
         try {
             Glide.with(this).load(R.drawable.cover).into((ImageView) findViewById(R.id.backdrop));
@@ -93,10 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Adding few albums for testing
-     */
-    private void prepareAlbums() {
+    private void getFiles() {
         int fileCover = R.drawable.file;
         AssetManager am = getResources().getAssets();
         try{
